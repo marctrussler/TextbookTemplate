@@ -1,0 +1,288 @@
+--- 
+title: "Introduction to Inferential Statistics"
+author: "Dr. Marc Trussler"
+date: "2024-06-14"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  Class notes for PSCI-1801
+biblio-style: apalike
+csl: chicago-fullnote-bibliography.csl
+---
+
+
+
+# Syllabus {-}
+
+`Current as of` 2024-06-14
+
+<span style="color: red;">Draft version of syllabus subject to change.</span>
+
+
+___________
+
+
+*Lecture*: MW 12-1:30pm (Location TBD)
+
+_______
+
+**Dr. Marc Trussler**
+
+* [trussler@sas.upenn.edu](mailto:trussler@sas.upenn.edu)
+
+* Fox-Fels Hall 32 (3814 Walnut Street)
+
+* Office Hours: TBD
+
+<!-- **TA: Dylan Radley** -->
+
+<!-- * [dradley@sas.upenn.edu](mailto:dradley@sas.upenn.edu) -->
+
+<!-- * Fox-Fels Hall 35 (3814 Walnut Street) -->
+
+<!-- * Office Hours: -->
+
+<!--   * Tuesday 11-12 -->
+
+<!--   * Tuesday 3-4 -->
+
+<!--   * Thursday 12-1 -->
+
+## Course Description {-}
+
+The first step of many data science sequences is to learn a great deal about how to work with individual data sets: cleaning, tidying, merging, describing and visualizing data. These are crucial skills in data analytics, but describing a data set is *not* our ultimate goal. The ultimate goal of data science is to make **inferences** about the world based on the small sample of data that we have. 
+
+PSCI 1801 shifts focus to this goal of inference. Using a methodology that emphasizes intuition and simulation over mathematics, this course will cover the key statistical concepts of probability, sampling, distributions, hypothesis testing, and covariance. The goal of the class is for students to ultimately have the knowledge and ability to perform, customize, and explain bivariate and multivariate regression. Students who have not taken PSCI-1800 should have basic familiarity with R, including working with vectors and matrices, basic summary statistics, visualizations, and for() loops. 
+
+## Expectations and policies {-}
+
+### Prerequisite knowledge {-}
+
+PSCI 1800 (formerly 107) or similar `R` course. To help us better understand the nature of inferential statistics, we will be running quite a lot of simulations in `R`. Students entering the class should have a working knowledge of the `R` programming language, and in particular know how to use square brackets to index vectors and to run `for()` loops. We will be doing a short refresher on these concepts in the first two weeks of class.
+
+### Course Slack Channel {-}
+
+We will use Slack to communicate with the class. You will receive an invitation to join the our channel shortly after the start of class. One of the better things to come through the pandemic is the use of Slack for classroom communications. It is a really good tool to allow us to send quick and informal messages to individual students or groups (or for you to message us). Similarly, it allows you to collaborate with other students in the class, and is a great place to get simple questions answered. Because we will be making announcements via Slack, it is extremely important you get this set up. 
+
+### Format/Attendance {-}
+
+The lectures will be in person. While this is not a discussion-based class, there is an expectation of some amount of participation and feedback. Attendance will not be recorded, though do note you are scored on participation.
+
+### Computers {-}
+
+The course will require students to have access to a personal computer in order to run the statistics software. If this is not possible, please consult with one of the instructors as soon as possible. Support to cover course costs is available through (https://srfs.upenn.edu/sfs)[Student Financial Services].
+
+### Academic integrity {-}
+
+We expect all students to abide by the rules of the University and to follow the Code of Academic Integrity.^[http://www.upenn.edu/academicintegrity/ai\_codeofacademicintegrity.html] 
+
+For **Problem Sets**: Collaboration on problem sets is permitted. Ultimately, however, the write-up and code that you turn in must be your own creation. Please write the names of any students you worked with at the top of each problem set. ^[While collaborating is an important aspect of learning, I would encourage each of you to spend a good deal of time trying to work through problems on your own *before* moving to work collaboratively. Collaboration with others is a good step when you are really, really, stuck.  (Or you think you are making a stupid mistake in your code and need to see where it is). There is a value to helping one another, but **be aware of not knowing what you don't know**. The same is true about asking for help from one of the instructors. Of course we're more than willing to lend a hand -- but we're not always going to be here. Learning how to troubleshoot problems on your own is an extremely valuable skill.] 
+
+<!-- For **Exams**: Collaboration on the take home exams is cheating. Anyone caught collaborating (and I have caught many) will be immediately referred to the University's disciplinary system.  -->
+
+### Re-grading of assignments {-}
+
+All student work will be assessed using fair criteria that are uniform across the class. If, however, you are unsatisfied with the grade you received on a particular assignment (beyond simple clerical errors), you can request a re-grade using the following protocol. First, you may not send any grade complaints or requests for re-grades until at least 24 hours after the graded assignment was returned to you. After that, you must document your specific grievances in writing by submitting a PDF or Word Document to the teaching staff. In this document you should explain exactly which parts of the assignment you believe were mis-graded, and provide documentation for why your answers were correct.We will then re-score the entire assignment (including portions for which you did not have grievances), and the new score will be the one you receive on the assignment (even if it is lower than your original score).
+
+### Late policy {-}
+
+Notwithstanding everything below: exceptions to all of these policies will be made for health reasons, extraordinary family circumstances, and religious holidays. The teaching staff are extremely reasonable and lenient, as long as you discuss with us potential issues *before} the deadline.
+
+<!-- For problem sets: You are granted 5 ``grace days'' throughout the semester. Over the course of the semester you can use these when you need to turn problem sets in late. You can only use 3 grace days on any given assignment. You do not have to ask to use these days. This is counted in whole days, so if a problem set is turned in at 5:01pm the day it is due (i.e. 1 minute late) you will have used 1 grace day. If you turn the problem set in at 5:01pm the day after it is due (i.e. 24 hours and 1 minute late) you will have used 2 grace days etc. Choosing to not complete a problem set (see policy below) does not affect your grace days. Once you are out of grace days subsequently late problem sets will be graded as incomplete. -->
+
+<!-- The nature of the two exams (timed exams completed during a certain window) does not allow for any extensions.  -->
+
+## Assessment and grading {-}
+
+All assignments will be graded anonymously. **Please hand assignments in on Canvas with your student number, not your name.**
+
+TBD
+
+<!-- * Participation (5\%) -->
+
+<!--   - This portion of your grade mixes two components: -->
+
+<!--   - Traditional participation including: asking and answering questions in lecture and in recitations, asking and answering questions on the course Slack, or attending office hours. -->
+
+<!--   - The completion of weekly ``check-in'' quizzes on Canvas. These will be available each week, will take less than 5 minutes, and will be graded by completion (not correctness).  -->
+
+<!-- * Problem sets (45\%) -->
+
+<!--   - Five problem sets (roughly every two weeks) -->
+
+<!--   - Scored out of 100.  -->
+
+<!--   - You are free to do as many of the problem sets as you like. If you do not complete a problem set, the percentage points for that assignment will be transferred to the first exam (for PS1 and PS2), or the second exam (for PS3, PS4, \& PS5). For example if you don't complete PS2, the first exam would then be worth 34\% of your final grade. If you don't complete PS4 \& PS5, the second exam would be worth 43\% of your final grade.  -->
+
+<!-- * First Exam 25\% -->
+
+<!--   - This will be an open-book 24 hour take-home test. The test will open on Monday, October 16 at 3:00pm and close on Friday, October 20 at 11:59pm. You can select any 24 hour period to do the test during this window. The latest you can open the test and still have 24 hours to complete it is therefore October 19th at 11:59pm. You may **not** work with other students on this exam. It will take a similar form as the problem sets. -->
+
+<!-- * Second Exam 25\% -->
+
+<!--   - This will be a 3 hour open-book take-home test completed on December 20th. You may **not** work with other students on this exam. Because of the shortened time frame this exam will be less coding intensive and focus more on theoretic concepts. -->
+
+## Computing {-}
+
+We will use R in this class, which you can download for free at https://www.r-project.org/. R is completely open source and has an almost endless set of resources online. Virtually any data science job you could apply nowadays to will require some background in R programming.
+
+While R is the language we will use, RStudio is a free program that makes it considerably easier to work with R. After installing R, you should install RStudio https://www.rstudio.com. Please have both R and RStudio installed by the end of the first week of classes.
+
+If you're having trouble installing either program, there are more detailed installation instructions on the course Canvas page.
+
+## Textbook {-}
+
+There is one mandatory textbook for this course and two optional:
+
+* Data Analysis for Social Science: A Friendly and Practical Introduction. Elena Llaudet \& Kosuke Imai. (Mandatory).
+
+  * I have chosen this book because it does a really good job of weaving in the basics of statistics with the use of R. Generally speaking the assigned readings from this book will be slightly less technical than what is in the class notes. This book is available at the bookstore and from Amazon. There is only one addition, but be sure to get the (way cheaper) paperback version.
+
+* Quantitative Social Science: an Introduction. Kosuke Imai.
+
+  * This is the original, graduate level, textbook the Llaudet and Imai textbook is based on. The chapters are largely the same, but this textbook is much more math intensive. I have included below the equivalent readings (labeled QSS) if you want to go into greater detail. These readings are completely optional.
+  
+* Statistics: Fourth Edition. Freedman, Pisani, Purves. (Optional).
+
+  * This textbook has a slightly more conversational and intuitive approach, but does not incorporate those lessons with R. While having this book is not mandatory I really like the style and common-sense explanations of this book. It's a great companion to have around. 
+
+## Class Schedule {-}
+
+### Week 1: August 28 (No Monday Class) {-}
+
+**The population is the point.**
+
+Excerpt from Mlodinow (on Canvas).
+
+### Week 2: (No Monday class) - September 4 {-}
+
+**R Review** 
+
+Llaudet \& Imai 1
+
+### Week 3: September 9 - September 11 {-}
+
+**R Review/Start probability** 
+
+Llaudet \& Imai 6.1,6.2,6.7 
+
+(QSS 4.11, 6.1)
+
+*September 10: course selection period ends*
+
+### Week 4: September 16 - September 18 {-}
+
+**Conditional probability and independence** 
+
+(QSS 6.3)
+
+### Week 5: September 23 - September 25 {-}
+
+**Random Variables I: Discrete** 
+
+Llaudet \& Imai 6.4.1
+
+(QSS 6.3)
+
+<span style="color: red;">**Problem Set 1 Due Wednesday 7pm**.</span>
+
+### Week 6: September 30 - October 2 {-}
+
+**Random Variables II: Continuous** 
+
+Llaudet \& Imai 6.4.2-6.4.4
+
+(QSS 6.4)
+
+### Week 7:October 7 - October 9 {-}
+
+**Sampling and confidence intervals** 
+
+Llaudet \& Imai 6.5.1,6.5.2
+
+(QSS 7.1)
+
+*October 7: Drop period ends*
+
+<span style="color: red;">**Problem Set 2 Due Wednesday 7pm**.</span>
+
+### Week 8: October 14 - October 16 {-}
+
+**Review** 
+
+
+<span style="color: red;">**First Midterm Exam period Wednesday in class period.**.</span>
+
+### Week 9: October 21 - October 23 {-}
+
+**Standard error of the mean/Field Trip** 
+
+Llaudet \& Imai 6.5.3
+
+On October 23rd we will take a class field trip to the NBC News Decision Desk. (Tentative.) 
+
+*October 25: Grade type change deadline.*
+
+### Week 10: October 28 - October 30 {-}
+
+**Hypothesis Tests and Power** 
+
+Llaudet \& Imai 7.1 7.3 7.4
+
+(QSS 7.2)
+
+<span style="color: red;">**Problem Set 3 Due Wednesday 7pm**.</span>
+
+### Week 11: November 4 - November 6 {-}
+
+**Two continuous variables and covariation** 
+
+Llaudet \& Imai 3.5
+
+(QSS 3.6)
+
+*November 4: Withdrawal deadline*
+
+### Week 12: November 11 - November 13 {-}
+
+**Correlation and bivariate regressionn** 
+
+Llaudet \& Imai 4.3
+
+(QSS 4.2)
+
+<span style="color: red;">**Problem Set 4 Due Wednesday 7pm**.</span>
+
+### Week 13: November 18 -- November 20 {-}
+
+**Multivariate Regression I** 
+
+Llaudet \& Imai 2.1-2.4
+
+### Week 14: November 25 - (No Wednesday Class) {-}
+
+**Multivariate regression II** 
+
+Llaudet \& Imai 5.1-5.5
+
+### Week 15: December 2- December 4 {-}
+
+**Interaction with regression** 
+
+Excerpt from Kam and Franzese (Canvas)
+
+<span style="color: red;">**Problem Set 5 Due Wednesday 7pm**.</span>
+
+### Week 16: December 9 {-}
+
+**Prediction with regression** 
+
+Llaudet \& Imai 4.5-4.6
+
+(QSS 7.3.1,7.3.2)
+
+_______
+

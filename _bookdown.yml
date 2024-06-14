@@ -1,0 +1,28 @@
+book_filename: "IIS"
+rmd_files:
+  html: ["index.Rmd"
+          ,"Introduction.Rmd"
+         #,"RCrashCourse.Rmd"
+         #,"Probability.Rmd"
+         #,"DiscreteRVS.Rmd"
+         #,"ContinuousRVS.Rmd"
+         #,"Sampling.Rmd"
+         #,"Review.Rmd"
+         #,"SEOTM.Rmd"
+         #,"HypothesisTests.Rmd"
+         #,"Covariance.Rmd"
+         #,"Regression.Rmd"
+         #,"MultivariateRegression.Rmd"
+         #,"RegressionFunctionalForm.Rmd"
+         #,"RegressionPrediction.Rmd"
+         #,"FinalReview.Rmd"
+         #,"PSEx.Rmd"
+         ]
+         
+new_session: true
+before_chapter_script: _common.R
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+output_dir: "docs"
