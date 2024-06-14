@@ -1,4 +1,4 @@
-book_filename: "IIS"
+book_filename: "Template"
 rmd_files:
   html: ["index.Rmd"
           ,"Introduction.Rmd"

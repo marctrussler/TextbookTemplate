@@ -1,5 +1,5 @@
 --- 
-title: "Introduction to Inferential Statistics"
+title: "Template Book"
 author: "Dr. Marc Trussler"
 date: "2024-06-14"
 site: bookdown::bookdown_site
@@ -8,7 +8,7 @@ bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-  Class notes for PSCI-1801
+  Class notes for XXXXX
 biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 ---
